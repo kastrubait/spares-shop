@@ -100,15 +100,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.component.html"
             ]
           }
         },
@@ -127,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "spares-shop"
+  "defaultProject": "spares-shop",
+  "cli": {
+    "analytics": "80567847-3e21-4adb-9d3b-babc6fe5c117"
+  }
 }
