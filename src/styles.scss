@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+
+  --primary-color:        #003333; //???
+  --primary-text-color:   #c9dff2; //btn-text-color, logo-color, bg-card-color
+  --accent-pink-color:    #bf4e6d;
+  --accent-grey-color:    #3e4459; //text-color-accent
+  --secondary-text-color: #260205; //text-color-base
+  --color-white-alt:      #e9f1f2; //bg-body-color
+
+  --shadow-ligth:        #fafbfff2;
+  --shadow-dark:         #0028780c;
+}
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, 'Fira Sans', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  color: var(--secondary-text-color);
+  background-color: var(--color-white-alt);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--shadow-dark);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: vat(--color-violet-op04);
+}
+
+.country-selector-code {
+  color: var(--secondary-text-color);
+}

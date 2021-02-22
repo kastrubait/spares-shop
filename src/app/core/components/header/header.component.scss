@@ -1,0 +1,21 @@
+#myInput {
+  background-image: url('../../../../assets/svg/search.svg');
+  background-position: 16px 20px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 18px;
+  padding: 20px 20px 20px 50px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  @media screen and (max-width: 540px) {
+    width: 90%;
+  }
+}
+
+.cartmenu-icon,
+.account-icon {
+  height: 40px;
+}
+
+
