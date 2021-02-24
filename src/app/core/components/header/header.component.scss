@@ -3,7 +3,7 @@ header {
   justify-content: center;
   height: 140px;
   align-items: center;
-  box-shadow: 0px 6px 21px 0 rgba(154, 170, 176, 0.17);
+  box-shadow: 0px 6px 21px 0 var(--shadow-dark);
   background-color: var(--color-white);
 
   .line-help {

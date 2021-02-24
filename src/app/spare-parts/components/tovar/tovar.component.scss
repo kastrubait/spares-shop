@@ -1,0 +1,153 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-top: 3rem;
+}
+
+.container .card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  margin-right: 1.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-white-alt);
+  border-radius: 20px;
+  font-family: 'Trebuchet MS';
+  overflow: hidden;
+}
+
+.container .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-text-color);
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-out;
+}
+
+.container .card:hover::before {
+  clip-path: circle(300px at 80% -20%);
+}
+
+.container .card .imgBx {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.container .card:hover .imgBx {
+  top: 0;
+  transform: translateY(0);
+}
+
+.container .card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card:hover .contentBx {
+  height: 220px;
+}
+
+.container .card .contentBx h3 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent-pink-color);
+}
+
+.container .card .contentBx .cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card:hover .contentBx .cost {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card .contentBx .cost h3 {
+  color: var(--accent-grey-color);
+  font-weight: 300;
+  font-size: 14px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent-pink-color);
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.container .card .contentBx span {
+  display: inline-block;
+  width: 120px;
+  padding: 10px 25px 0 5px;
+  text-align: left;
+  color: var(--primary-text-color);
+  font-weight: 600;
+  transform: translateY(20px);
+  transition: 0.5s;
+}
+
+.container .card .contentBx span .green {
+  color: green;
+}
+
+.container .card .contentBx span .country {
+  color: var(--accent-grey-color);
+  font-size: 16px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.container .card:hover .contentBx a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.75s;
+}
+
+.container .card:hover {
+  box-shadow: 0px 6px 21px 0 var(--shadow-dark);
+}
