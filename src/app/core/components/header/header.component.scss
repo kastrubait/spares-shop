@@ -1,21 +1,72 @@
+header {
+  display: flex;
+  justify-content: center;
+  height: 140px;
+  align-items: center;
+  box-shadow: 0px 6px 21px 0 rgba(154, 170, 176, 0.17);
+  background-color: var(--color-white);
+
+  .line-help {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: var(--accent-grey-color);
+    opacity: 0.5;
+  }
+
+  .header-container {
+    display: flex;
+    width: 100%;
+    max-width: 1366px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    &--logo {
+      height: 55px;
+    }
+    &--user-account,
+    &--cart {
+      width: 65px;
+      position: relative;
+      margin: 0 1em 0 1em;
+      font-family: 'Trebuchet MS';
+      color: var(--accent-pink-color);
+    }
+    &--user-account:hover,
+    &--cart:hover {
+      cursor: pointer;
+    }
+    &--cart .badge {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      padding: 8px 13px;
+      border-radius: 50%;
+      font-weight: 700;
+      background: var(--primary-text-color);
+      color: var(--accent-grey-color);
+    }
+  }
+  .cartmenu-icon,
+  .account-icon {
+    height: 37px;
+  }
+}
+
 #myInput {
   background-image: url('../../../../assets/svg/search.svg');
   background-position: 16px 20px;
   background-repeat: no-repeat;
-  width: 30%;
+  width: 50%;
   font-size: 18px;
   padding: 20px 20px 20px 50px;
   border: 1px solid var(--primary-text-color);
   border-radius: 4px;
-  margin-bottom: 12px;
-  @media screen and (max-width: 540px) {
+  margin: 0 40px 0 40px;
+  @media screen and (max-width: 730px) {
     width: 90%;
   }
 }
-
-.cartmenu-icon,
-.account-icon {
-  height: 40px;
-}
-
-
