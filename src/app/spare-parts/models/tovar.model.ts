@@ -13,3 +13,9 @@ export interface ITovar {
   createDate: number;
   isAvailable: boolean;
 }
+
+export interface ITovarInCart extends ITovar {
+  quantity: number;
+  customer?: string;
+  isOptPrice?: boolean;
+}

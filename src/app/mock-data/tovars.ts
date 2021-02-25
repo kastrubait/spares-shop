@@ -16,7 +16,7 @@ export const TOVARS: ITovar[] = [
     isAvailable: false
   },
   {
-    id: 1,
+    id: 2,
     vendorCode: 'Т25-1701252',
     title: 'Вал вторичный',
     description: '',
@@ -29,7 +29,7 @@ export const TOVARS: ITovar[] = [
     isAvailable: true
   },
   {
-    id: 1,
+    id: 3,
     vendorCode: 'Т30.37.185',
     title: 'Вилка реверса (широкая 38мм) Т-25 (А)',
     description: '',

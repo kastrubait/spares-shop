@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SparePartsModule } from './spare-parts/spare-parts.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SparePartsModule } from './spare-parts/spare-parts.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SparePartsModule
+    SparePartsModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
