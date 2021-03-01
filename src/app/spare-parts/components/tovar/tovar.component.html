@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="card" *ngFor="let tovar of tovars">
+<!-- <div class="container"> -->
+  <div class="card">
     <div class="imgBx">
       <img [src]=[tovar.imgLink] alt="{{ tovar.vendorCode }}">
     </div>
@@ -18,7 +18,8 @@
         Страна пр-ва:<br/>
         <p class="country">{{ tovar.country | uppercase }}</p>
       </span>
-      <a (click)="addToCart(tovar)">В корзину</a>
+      <a *ngIf="tovar.isAvailable" (click)="selectTovar(tovar)">В корзину</a>
+      <a *ngIf="!tovar.isAvailable">Подписаться</a>
     </div>
   </div>
-</div>
+<!-- </div> -->

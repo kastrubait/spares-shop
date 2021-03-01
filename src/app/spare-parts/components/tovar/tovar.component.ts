@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {
+ Component, Input, Output, EventEmitter
+} from '@angular/core';
 
-import { TOVARS } from '../../../mock-data/tovars';
 import { ITovar } from '../../models/tovar.model';
-import { CartService } from '../../../cart/services/cart.service';
 
 @Component({
   selector: 'app-tovar',
@@ -10,11 +10,11 @@ import { CartService } from '../../../cart/services/cart.service';
   styleUrls: ['./tovar.component.scss']
 })
 export class TovarComponent {
-  tovars = TOVARS;
+  @Input() tovar!: ITovar;
 
-  constructor(private cartService: CartService) { }
+  @Output() tovarSelected: EventEmitter<ITovar> = new EventEmitter<ITovar>();
 
-  addToCart(tovar: ITovar): void {
-    this.cartService.addToCart(tovar);
+  selectTovar(tovar: ITovar): void {
+    this.tovarSelected.emit(tovar);
   }
 }

@@ -9,6 +9,7 @@ export interface ITovar {
   price_ret: number;
   price_opt: number;
   category: TovarCategory;
+  weight?: number;
   imgLink: string;
   createDate: number;
   isAvailable: boolean;
@@ -16,6 +17,5 @@ export interface ITovar {
 
 export interface ITovarInCart extends ITovar {
   quantity: number;
-  customer?: string;
   isOptPrice?: boolean;
 }

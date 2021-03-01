@@ -1,0 +1,8 @@
+<div class="container">
+  <app-tovar
+    class="card"
+    *ngFor="let tovar of tovars"
+    [tovar]='tovar'
+    (tovarSelected)="setTovarSelected($event)">
+  </app-tovar>
+</div>
