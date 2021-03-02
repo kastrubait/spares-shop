@@ -2,9 +2,9 @@ import {
  Component, OnInit, Input, ChangeDetectionStrategy
 } from '@angular/core';
 
-import { TOVARS } from '../../../mock-data/tovars';
 import { ITovar } from '../../models/tovar.model';
 import { CartService } from '../../../cart/services/cart.service';
+import { TovarService } from '../../services/tovar.service';
 
 @Component({
   selector: 'app-tovar-list',
@@ -17,10 +17,13 @@ export class TovarListComponent implements OnInit {
 
   @Input() tovarSelected!: ITovar;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private tovarService: TovarService
+  ) {}
 
   ngOnInit (): void {
-    this.tovars = TOVARS;
+    this.tovars = this.tovarService.getAllTovars();
   }
 
   setTovarSelected(tovar: ITovar): void {
