@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ITotalCard } from "../../models/total-card.model";
+import { ITotalCart } from "../../models/total-card.model";
 
 @Component({
   selector: 'app-cart-item',
@@ -8,7 +8,7 @@ import { ITotalCard } from "../../models/total-card.model";
   styleUrls: ['./cart-item.component.scss']
 })
 export class CartItemComponent {
-  @Input() total!: ITotalCard;
+  @Input() total!: ITotalCart;
 
   // ngOnInit(): void {
   // }

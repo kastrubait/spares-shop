@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ITovar } from '../../../spare-parts/models/tovar.model';
-import { ITotalCard } from "../../models/total-card.model";
+import { ITotalCart } from "../../models/total-card.model";
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  tovarInCard!: ITovar[];
-  total!: ITotalCard[];
+  tovarsInCart!: ITovar[];
+  total!: ITotalCart[];
   totalSumm = 0;
 
   constructor(private cartService: CartService) {
    }
 
   ngOnInit (): void {
-    this.tovarInCard = this.cartService.getAllItems();
+    this.total = this.cartService.getAllItems();
   }
 }

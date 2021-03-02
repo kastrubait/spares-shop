@@ -8,5 +8,10 @@ export enum TovarCategory {
   battery = "АКБ",
   filter = "Фильтрующий элемент",
   bearings = "Подшипники",
-  belts = "Ремни стяжные",
+  belts = "Ремни стяжные"
+}
+
+export enum PriceType {
+  opt1 = 'ОПТ-1',
+  retail = '*'
 }

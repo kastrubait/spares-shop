@@ -10,7 +10,7 @@
 
   <div class="description">
     <span>{{ total.tovar.title }}</span>
-    <span>Тип цены: </span>
+    <span>Тип цены: {{ total.price }}</span>
     v<span>Артикул: {{ total.tovar.vendorCode }}</span>
   </div>
 
@@ -18,7 +18,7 @@
     <button class="plus-btn" type="button" name="button">
       <img src="../../assets/svg/plus.svg" alt="plus" />
     </button>
-    <input type="text" name="name" value="{{ total.tovar.quantity }}">
+    <input type="text" name="name" value="{{ total.quantity }}">
     <button class="minus-btn" type="button" name="button">
       <img src="../../assets/svg/minus.svg" alt="minus" />
     </button>

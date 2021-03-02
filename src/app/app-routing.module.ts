@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TovarComponent } from './spare-parts/components/tovar/tovar.component';
+import { TovarListComponent } from './spare-parts/components/tovar-list/tovar-list.component';
+import { CartComponent } from './cart/components/cart/cart.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: TovarComponent,
+    component: TovarListComponent,
   },
   {
     path: 'cart',
-    component: TovarComponent,
+    component: CartComponent,
   },
   {
     path: '',

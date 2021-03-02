@@ -1,25 +1,23 @@
-<!-- <div class="container"> -->
-  <div class="card">
-    <div class="imgBx">
-      <img [src]=[tovar.imgLink] alt="{{ tovar.vendorCode }}" />
-    </div>
-    <div class="contentBx">
-      <h3>{{ tovar.title }}({{ tovar.vendorCode }})</h3>
-      <div class="cost">
-        <h2>{{ tovar.price_ret | currency }}</h2>
-      </div>
-      <span>
-        <p class="green" *ngIf="tovar.isAvailable">
-          В наличии <span class="round">&#x2713;</span>
-        </p>
-        <p class="green" *ngIf="!tovar.isAvailable">
-          Под заказ <span class="round">!</span>
-        </p>
-        Страна пр-ва:<br/>
-        <p class="country">{{ tovar.country | uppercase }}</p>
-      </span>
-      <a *ngIf="tovar.isAvailable" (click)="selectTovar(tovar)">В корзину</a>
-      <a *ngIf="!tovar.isAvailable">Подписаться</a>
-    </div>
+<div class="card">
+  <div class="imgBx">
+    <img [src]=[tovar.imgLink] alt="{{ tovar.vendorCode }}" />
   </div>
-<!-- </div> -->
+  <div class="contentBx">
+    <h3>{{ tovar.title }}({{ tovar.vendorCode }})</h3>
+    <div class="cost">
+      <h2>{{ tovar.price[0].cost | currency }}</h2>
+    </div>
+    <span>
+      <p class="green" *ngIf="tovar.isAvailable">
+        В наличии <span class="round">&#x2713;</span>
+      </p>
+      <p class="green" *ngIf="!tovar.isAvailable">
+        Под заказ <span class="round">!</span>
+      </p>
+      Страна пр-ва:<br/>
+      <p class="country">{{ tovar.country | uppercase }}</p>
+    </span>
+    <a *ngIf="tovar.isAvailable" (click)="selectTovar(tovar)">В корзину</a>
+    <a *ngIf="!tovar.isAvailable">Подписаться</a>
+  </div>
+</div>

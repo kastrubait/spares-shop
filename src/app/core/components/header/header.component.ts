@@ -11,7 +11,6 @@ import { CartService } from '../../../cart/services/cart.service';
 })
 export class HeaderComponent implements OnInit {
   totalInCart = 0;
-
   subscription!: Subscription;
 
   constructor(private cartService: CartService, private router: Router) { }
