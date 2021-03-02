@@ -1,12 +1,12 @@
 <!-- <div class="container"> -->
   <div class="card">
     <div class="imgBx">
-      <img [src]=[tovar.imgLink] alt="{{ tovar.vendorCode }}">
+      <img [src]=[tovar.imgLink] alt="{{ tovar.vendorCode }}" />
     </div>
     <div class="contentBx">
       <h3>{{ tovar.title }}({{ tovar.vendorCode }})</h3>
       <div class="cost">
-        <h2>{{ tovar.price_ret }}</h2>
+        <h2>{{ tovar.price_ret | currency }}</h2>
       </div>
       <span>
         <p class="green" *ngIf="tovar.isAvailable">
