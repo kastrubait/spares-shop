@@ -1,0 +1,21 @@
+<header>
+  <div class="line-help"></div>
+  <div class="header-container">
+    <span class="header-container--logo">
+      <img class="header-container--logo" src="../../assets/logo-2.png" alt="logo">
+      <ng-content></ng-content>
+    </span>
+    <input type="text" id="myInput" placeholder="Введите название товара или артикул">
+    <span class="header-container--user-account">
+      <img class="account-icon" src="../../assets/svg/user.svg" alt="user-account" />
+      <label class="header-label">Вход</label>
+    </span>
+    <span class="header-container--cart user-card" (click)="goToCartPage()">
+      <img class="cartmenu-icon" src="../../assets/svg/shopping-cart.svg" alt="user-cartmenu"/>
+      <label class="header-label">
+        Корзина
+      </label>
+      <span class="badge">{{ totalInCart }}</span>
+    </span>
+  </div>
+</header>

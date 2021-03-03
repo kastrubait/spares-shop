@@ -1,0 +1,125 @@
+.card .imgBx {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 100%;
+  height: 220px;
+  transition: 0.5s;
+}
+
+.card:hover .imgBx {
+  top: 0;
+  transform: translateY(0);
+}
+
+.card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+}
+
+.card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 10;
+}
+
+.card:hover .contentBx {
+  height: 220px;
+}
+
+.card .contentBx h3 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent-pink-color);
+}
+
+.card .contentBx .cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card:hover .contentBx .cost {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.card .contentBx .cost h3 {
+  color: var(--accent-grey-color);
+  font-weight: 300;
+  font-size: 14px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.card .contentBx a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent-pink-color);
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.card .contentBx span {
+  display: inline-block;
+  width: 120px;
+  padding: 10px 25px 0 5px;
+  text-align: left;
+  color: var(--primary-text-color);
+  font-weight: 600;
+  transform: translateY(20px);
+  transition: 0.5s;
+}
+
+.card .contentBx span .green {
+  color: green;
+}
+
+.card .contentBx span .green .round {
+  display: inline;
+  width: 10px;
+  padding: 1px 7px;
+  color: green;
+  border-radius: 50%;
+  border: 1px solid var(--primary-text-color);
+}
+
+.card .contentBx span .country {
+  color: var(--accent-grey-color);
+  font-size: 16px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.card:hover .contentBx a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.75s;
+}
+
+a:hover {
+  cursor: pointer;
+}
