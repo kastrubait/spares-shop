@@ -11,7 +11,7 @@ export class CartService {
   items: ITotalCart[] = [];
   totalInCart = 0;
 
-  eventChangedCountTovar = new Subject<number>();
+  eventChangedCountTovar$ = new Subject<number>();
 
   addToCart(tovar: ITovar): void {
     const indexTovar: number = this.items.findIndex((item) => item.tovar.id === tovar.id);
@@ -23,7 +23,7 @@ export class CartService {
 
     this.totalInCart = this.countTovarInCart(this.items.slice());
 
-    this.eventChangedCountTovar.next(this.totalInCart);
+    this.eventChangedCountTovar$.next(this.totalInCart);
   }
 
   countTovarInCart(items: ITotalCart[]): number {
