@@ -1,39 +1,42 @@
 .item {
-  height: 120px;
+  height: 130px;
 }
 
 .buttons {
   position: relative;
-  padding-top: 30px;
-  margin-right: 60px;
+  padding-top: 20px;
+  margin-right: 50px;
   display: inline-block;
   .delete-btn {
     display: inline-block;
     cursor: pointer;
   }
   .delete-btn {
-    width: 18px;
-    height: 17px;
-    background: url('../../../../assets/svg/close.svg') no-repeat center;
+    width: 20px;
+    height: 100px;
+    background: url('../../../../assets/svg/close.svg') no-repeat top;
   }
 }
 
 .image {
   margin-right: 50px;
   display: inline-block;
+  img {
+    width: 120px;
+  }
 }
 
 .description {
-  padding-top: 10px;
-  margin-right: 60px;
+  margin-right: 50px;
   width: 300px;
   display: inline-block;
+  align-items: center;
 }
 
 .description span {
   display: block;
-  font-size: 14px;
-  color: #43484D;
+  font-size: 20px;
+  color: vat(--accent-grey-color);;
   font-weight: 400;
 }
 
@@ -44,12 +47,12 @@
 .description span:last-child {
   font-weight: 300;
   margin-top: 8px;
-  color: #86939E;
+  color: vat(--accent-grey-color);
 }
 
 .quantity {
-  padding-top: 20px;
-  margin-right: 60px;
+  // padding-top: 20px;
+  margin-right: 50px;
   display: inline-block;
 }
 
@@ -61,7 +64,7 @@
   height: 35px;
   font-size: 20px;
   color: var(--accent-grey-color);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 button[class*=btn] {
@@ -89,22 +92,17 @@ input:focus {
   text-align: center;
   font-size: 24px;
   color: var(--accent-grey-color);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 @media (max-width: 800px) {
-  .shopping-cart {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
   .item {
     height: auto;
     flex-wrap: wrap;
     justify-content: center;
   }
   .image img {
-    width: 50%;
+    width: 60%;
   }
   .image,
   .quantity,
@@ -115,5 +113,8 @@ input:focus {
   }
   .buttons {
     margin-right: 20px;
+    .delete-btn {
+      height: 30px;
+    }
   }
 }
