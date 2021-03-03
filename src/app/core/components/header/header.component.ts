@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
-    this.subscription = this.cartService.eventChangedCountTovar
+    this.subscription = this.cartService.eventChangedCountTovar$
     .subscribe(
       (events: number) => {
         this.totalInCart = events;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
-import { ITovar } from '../../../spare-parts/models/tovar.model';
 import { ITotalCart } from "../../models/total-card.model";
 import { CartService } from '../../services/cart.service';
 
@@ -10,15 +10,20 @@ import { CartService } from '../../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  tovarsInCart!: ITovar[];
   total!: ITotalCart[];
   totalSumm = 0;
+  subscription!: Subscription;
 
   constructor(private cartService: CartService) {
    }
 
   ngOnInit (): void {
     this.total = this.cartService.getAllItems();
-    this.totalSumm = this.cartService.getTotalSumm(this.total);
+    this.subscription = this.cartService.eventChangedTotalSumm$
+    .subscribe(
+      (events: number) => {
+        this.totalSumm = events;
+      }
+    )
   }
 }

@@ -10,10 +10,11 @@ import { ITotalCart } from "../models/total-card.model";
 export class CartService {
   items: ITotalCart[] = [];
   totalInCart = 0;
+  totalSumm = 0;
+  eventChangedCountTovar$ = new Subject<number>();
+  eventChangedTotalSumm$ = new Subject<number>();
 
-  eventChangedCountTovar = new Subject<number>();
-
-  addToCart(tovar: ITovar): void {
+  addTovarToCart(tovar: ITovar): void {
     const indexTovar: number = this.items.findIndex((item) => item.tovar.id === tovar.id);
     if (indexTovar > -1) {
       this.items[indexTovar].quantity += 1;
@@ -23,8 +24,41 @@ export class CartService {
     }
 
     this.totalInCart = this.countTovarInCart(this.items.slice());
+    this.totalSumm = this.getTotalSumm(this.items.slice());
 
-    this.eventChangedCountTovar.next(this.totalInCart);
+    this.eventChangedCountTovar$.next(this.totalInCart);
+    this.eventChangedTotalSumm$.next(this.totalSumm);
+  }
+
+  removePositionFromCart(tovar: ITovar): void {
+    const indexTovar: number = this.items.findIndex((item) => item.tovar.id === tovar.id);
+    if (indexTovar > -1) {
+      this.items = this.items.slice(0, indexTovar).concat(this.items.slice(indexTovar + 1))
+    }
+    this.totalInCart = this.countTovarInCart(this.items.slice());
+    this.totalSumm = this.getTotalSumm(this.items.slice());
+
+    this.eventChangedCountTovar$.next(this.totalInCart);
+    this.eventChangedTotalSumm$.next(this.totalSumm);
+  }
+
+  removeTovarFromCart(tovar: ITovar): void {
+    const indexTovar: number = this.items.findIndex((item) => item.tovar.id === tovar.id);
+    if (indexTovar > -1) {
+      this.items[indexTovar].quantity -= 1;
+      this.items[indexTovar].summ -= tovar.price[0].cost;
+    } else {
+      console.error('Item is not in the cart');
+    }
+    if (this.items[indexTovar].quantity === 0) {
+      this.items = this.items.slice(0, indexTovar).concat(this.items.slice(indexTovar + 1))
+    }
+
+    this.totalInCart = this.countTovarInCart(this.items.slice());
+    this.totalSumm = this.getTotalSumm(this.items.slice());
+
+    this.eventChangedCountTovar$.next(this.totalInCart);
+    this.eventChangedTotalSumm$.next(this.totalSumm);
   }
 
   countTovarInCart(items: ITotalCart[]): number {

@@ -32,6 +32,6 @@ export class TovarListComponent implements OnInit {
   }
 
   addToCart(tovarSelected: ITovar): void {
-    this.cartService.addToCart(tovarSelected);
+    this.cartService.addTovarToCart(tovarSelected);
   }
 }

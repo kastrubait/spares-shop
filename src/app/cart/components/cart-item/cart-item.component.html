@@ -1,6 +1,6 @@
 <div class="item">
   <div class="buttons">
-    <span class="delete-btn"></span>
+    <span class="delete-btn" (click)="deleteItem(total.tovar)"></span>
     <span class="like-btn"></span>
   </div>
 
@@ -15,11 +15,19 @@
   </div>
 
   <div class="quantity">
-    <button class="plus-btn" type="button" name="button">
+    <button
+      class="minus-btn"
+      type="button"
+      name="button"
+      (click)="increaseQuantity(total.tovar)">
       <img src="../../assets/svg/minus.svg" alt="minus" />
     </button>
     <input type="text" name="name" value="{{ total.quantity }}">
-    <button class="minus-btn" type="button" name="button">
+    <button
+      class="plus-btn"
+      type="button"
+      name="button"
+      (click)="decreaseQuantity(total.tovar)">
       <img src="../../assets/svg/plus.svg" alt="plus" />
     </button>
   </div>
