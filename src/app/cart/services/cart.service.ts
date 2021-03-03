@@ -17,8 +17,9 @@ export class CartService {
     const indexTovar: number = this.items.findIndex((item) => item.tovar.id === tovar.id);
     if (indexTovar > -1) {
       this.items[indexTovar].quantity += 1;
+      this.items[indexTovar].summ += tovar.price[0].cost;
     } else {
-      this.items.push({ tovar, quantity: 1 });
+      this.items.push({ tovar, quantity: 1, summ: tovar.price[0].cost });
     }
 
     this.totalInCart = this.countTovarInCart(this.items.slice());
@@ -28,6 +29,10 @@ export class CartService {
 
   countTovarInCart(items: ITotalCart[]): number {
     return items.reduce((sum, current) => sum + current.quantity, 0);
+  }
+
+  getTotalSumm(items: ITotalCart[]): number {
+    return items.reduce((sum, current) => sum + current.quantity*current.tovar.price[0].cost, 0);
   }
 
   getAllItems(): ITotalCart[] {

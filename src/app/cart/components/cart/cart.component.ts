@@ -19,5 +19,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit (): void {
     this.total = this.cartService.getAllItems();
+    this.totalSumm = this.cartService.getTotalSumm(this.total);
   }
 }
