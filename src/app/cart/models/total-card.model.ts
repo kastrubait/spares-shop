@@ -5,5 +5,5 @@ export interface ITotalCart {
   tovar: ITovar;
   quantity: number;
   price?: PriceType;
-  summ?: number;
+  summ: number;
 }

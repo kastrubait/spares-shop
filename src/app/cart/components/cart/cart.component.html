@@ -4,6 +4,7 @@
   </div>
   <app-cart-item
     class="cart-container--item"
-    *ngFor="let tovar of tovarsInCart">
+    *ngFor="let tovarInCart of total"
+    [total] = "tovarInCart">
   </app-cart-item>
 </div>
