@@ -1,0 +1,9 @@
+<div class="cart-container">
+  <div class="cart-container--total">
+    <span class="total-summ">{{ totalSumm | currency }}</span>
+  </div>
+  <app-cart-item
+    class="cart-container--item"
+    *ngFor="let tovar of tovarsInCart">
+  </app-cart-item>
+</div>
