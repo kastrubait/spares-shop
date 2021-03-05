@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ITotalCart } from 'src/app/cart/models/total-card.model';
+
+interface IChangesStorage {
+  type: string;
+  key: string;
+  value?: ITotalCart[]
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
   localStorage: Storage;
-  changes$ = new Subject();
+  changes$ = new Subject<IChangesStorage>();
 
   constructor() {
     this.localStorage = window.localStorage;
