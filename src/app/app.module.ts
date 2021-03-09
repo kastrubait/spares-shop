@@ -8,6 +8,8 @@ import { SparePartsModule } from './spare-parts/spare-parts.module';
 import { CartModule } from './cart/cart.module';
 import { OrdersModule } from './orders/orders.module';
 
+import { TEST_CONSTANTS, TEST_DI_CONSTANTS } from './core/services/constants.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +22,12 @@ import { OrdersModule } from './orders/orders.module';
     CartModule,
     OrdersModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: TEST_CONSTANTS,
+      useValue: TEST_DI_CONSTANTS,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

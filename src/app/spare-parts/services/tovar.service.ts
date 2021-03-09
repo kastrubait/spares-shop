@@ -16,6 +16,7 @@ export class TovarService {
   }
 
   getTovarById(id: number):ITovar {
+    this.tovars = this.getAllTovars();
     const indexTovar: number = this.tovars.findIndex((item) => item.id === id);
     if (indexTovar > -1) {
       this.tovarById = this.tovars[indexTovar];
