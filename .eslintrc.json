@@ -72,7 +72,8 @@
             "prefix": "app",
             "style": "camelCase"
           }
-        ]
+        ],
+        "max-classes-per-file": ["error", 2]
       }
     },
     {

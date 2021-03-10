@@ -1,6 +1,8 @@
 import { ITovar } from '../../spare-parts/models/tovar.model';
 import { TovarCategory, PriceType } from '../../spare-parts/models/categories.model';
 
+export const IS_DEV_ENVIRONMENT = true;
+
 export const TOVARS_IN_CART = 'cart_tovars';
 
 export const TEMPLATE_TOVAR: ITovar = {

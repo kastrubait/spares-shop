@@ -11,7 +11,7 @@ export class TovarService {
   tovarById!: ITovar;
 
   getAllTovars (): ITovar[] {
-    this.tovars = TOVARS;
+    // Http request to get information about tovars;
     return this.tovars;
   }
 
@@ -22,5 +22,14 @@ export class TovarService {
       this.tovarById = this.tovars[indexTovar];
     }
     return this.tovarById;
+  }
+}
+
+export class MockTovarService extends TovarService {
+  tovars: ITovar[] = [];
+
+  getAllTovars (): ITovar[] {
+    this.tovars = TOVARS;
+    return this.tovars;
   }
 }
