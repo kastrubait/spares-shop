@@ -1,10 +1,19 @@
-<div class="cart-container">
-  <div class="cart-container--total">
-    <span class="total-summ">{{ totalSumm | currency }}</span>
-  </div>
-  <app-cart-item
-    class="cart-container--item"
-    *ngFor="let tovarInCart of total"
-    [total] = "tovarInCart">
-  </app-cart-item>
-</div>
+<section class="cart-container">
+  <ng-container *ngIf="total.length > 0; else isEmptyCart">
+    <div class="cart-container--total">
+      <span class="total-summ">{{ totalSumm | currency }}</span>
+    </div>
+    <app-cart-item
+      class="cart-container--item"
+      *ngFor="let tovarInCart of total"
+      [total] = "tovarInCart">
+    </app-cart-item>
+  </ng-container>
+  <ng-template #isEmptyCart>
+    <img src="../../../../assets/svg/shopping-cart.svg" alt="cart" />
+    <h2 class="empty-cart"></h2>
+    <span>
+      <a [routerLink]="['/home']">Нажмите здесь</a>, чтобы продолжить покупки
+    </span>
+  </ng-template>
+</section>
