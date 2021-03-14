@@ -19,6 +19,7 @@ export class CartComponent implements OnInit, OnDestroy {
   total: ITotalCart[] = [];
   totalSumm = 0;
   totalSummSubscription = new Subscription();
+  itemsCartSubscription = new Subscription();
   localStorageChanges$ = this.localStorageService.changes$;
   @Input() sortChanged: ISort = {
     active: SORT_KEY[0].active,
@@ -33,6 +34,12 @@ export class CartComponent implements OnInit, OnDestroy {
   ngOnInit (): void {
     this.total = this.cartService.getAllItems();
     // this.total = this.localStorageChanges$.value;
+    this.itemsCartSubscription = this.cartService.eventChangedItemsCart$
+    .subscribe(
+      (events: ITotalCart[]) => {
+        this.total = events;
+      }
+    )
     this.totalSumm = this.cartService.getTotalSumm(this.total);
     this.totalSummSubscription = this.cartService.eventChangedTotalSumm$
     .subscribe(
@@ -48,5 +55,6 @@ export class CartComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.totalSummSubscription.unsubscribe();
+    this.itemsCartSubscription.unsubscribe();
   }
 }

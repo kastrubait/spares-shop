@@ -16,6 +16,7 @@ export class CartService {
   totalSumm = 0;
   eventChangedCountTovar$ = new Subject<number>();
   eventChangedTotalSumm$ = new Subject<number>();
+  eventChangedItemsCart$ = new Subject<ITotalCart[]>();
 
   constructor(private localStorageService: LocalStorageService) {}
 
@@ -70,6 +71,7 @@ export class CartService {
     this.totalSumm = this.getTotalSumm(this.items.slice());
     this.eventChangedCountTovar$.next(this.totalInCart);
     this.eventChangedTotalSumm$.next(this.totalSumm);
+    this.eventChangedItemsCart$.next(this.items);
   }
 
   clearCart(): ITotalCart[] {
