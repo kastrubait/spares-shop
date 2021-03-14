@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 import { ISort } from '../../models/sort.model';
-import { SORT_KEY, SORT_DIRECTION } from '../../constants/constants';
+import { SORT_KEY, SORT_DIRECTION, DEFAULT_SORT_ACTIVE_INDEX } from '../../constants/constants';
 
 interface IndicatorStyle {
-  indicator__none: boolean;
-  indicator__asc: boolean;
-  indicator__desc: boolean;
+  'indicator--none': boolean;
+  'indicator--asc': boolean;
+  'indicator--desc': boolean;
 }
 
 @Component({
@@ -21,16 +21,16 @@ export class FiltersBlockComponent {
   }
 
   @Output() sortChanged: EventEmitter<ISort> = new EventEmitter<ISort>();
-  sortActiveName = SORT_KEY[0].value;
+  sortActiveName = SORT_KEY[DEFAULT_SORT_ACTIVE_INDEX].value
   clickCount = 0;
   indicatorStyle: IndicatorStyle = {
-    indicator__none: true,
-    indicator__asc: false,
-    indicator__desc: false
+    'indicator--none': true,
+    'indicator--asc': false,
+    'indicator--desc': false
   };
 
   changeSortActive(el: HTMLElement): void {
-    this.sortOptions.active = el.getAttribute('data-sortBy') || SORT_KEY[0].active;
+    this.sortOptions.active = el.getAttribute('data-sortBy') || SORT_KEY[DEFAULT_SORT_ACTIVE_INDEX].active;
     this.sortActiveName = el.innerHTML;
     this.indicatorStyle = this.setIndicatorStyle(this.clickCount);
     this.sortChanged.emit(this.sortOptions);
@@ -45,9 +45,9 @@ export class FiltersBlockComponent {
 
   setIndicatorStyle(clickCount: number): IndicatorStyle {
     return {
-      indicator__none: clickCount % 3 === 0,
-      indicator__asc: clickCount % 3 === 1,
-      indicator__desc: clickCount % 3 === 2
+      'indicator--none': clickCount % 3 === 0,
+      'indicator--asc': clickCount % 3 === 1,
+      'indicator--desc': clickCount % 3 === 2
     };
   }
 }

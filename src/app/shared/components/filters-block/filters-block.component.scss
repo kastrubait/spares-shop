@@ -3,7 +3,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   align-items: top;
-  justify-content: left;
+  justify-content: center;
   width: 80%;
   margin-top: 16px;
   font-family: 'Trebuchet MS';
@@ -57,13 +57,13 @@ section {
 
   .indicator {
     width: 10px;
-    &__none {
+    &--none {
       display: none;
     }
-    &__asc {
+    &--asc {
       transform: rotate(180deg);
     }
-    &__desc {
+    &--desc {
       transform: rotate(0deg);
     }
   }

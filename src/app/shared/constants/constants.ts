@@ -14,4 +14,5 @@ export const SORT_KEY = [
   { active: 'price', value: 'Цене' }
 ]
 
+export const DEFAULT_SORT_ACTIVE_INDEX = 0;
 export const HOVER_BGCOLOR = '#00333370';

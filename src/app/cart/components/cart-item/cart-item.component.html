@@ -7,13 +7,26 @@
   </div>
 
   <div class="item--image">
-    <img [src] = [total.tovar.imgLink] alt="{{ total.tovar.vendorCode }}" />
+    <img
+      [src] = [total.tovar.imgLink]
+      alt="{{ total.tovar.vendorCode }}" />
   </div>
 
   <div class="item--description">
-    <span class="title"><strong>{{ total.tovar.title }}</strong></span>
-    <span>Тип цены: {{ total.price }}</span>
-    <span>Артикул: <strong>{{ total.tovar.vendorCode }}</strong></span>
+    <span class="title">
+      <strong>
+        {{ total.tovar.title }}
+      </strong>
+    </span>
+    <span>
+      Тип цены: {{ total.price }}
+    </span>
+    <span>
+      Артикул:
+      <strong>
+        {{ total.tovar.vendorCode }}
+      </strong>
+    </span>
   </div>
 
   <div class="item--quantity">
@@ -24,7 +37,10 @@
       (click)="increaseQuantity(total.tovar)">
       <img src="../../assets/svg/minus.svg" alt="minus" />
     </button>
-    <input type="text" name="name" value="{{ total.quantity }}">
+    <input
+      type="text"
+      name="name"
+      value="{{ total.quantity }}">
     <button
       class="plus-btn"
       type="button"
@@ -34,5 +50,7 @@
     </button>
   </div>
 
-  <div class="item--total-price">{{ total.summ | currency }}</div>
+  <div class="item--total-price">
+    {{ total.summ | currency }}
+  </div>
 </div>

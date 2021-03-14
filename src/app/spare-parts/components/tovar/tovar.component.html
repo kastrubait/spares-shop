@@ -17,7 +17,17 @@
       Страна пр-ва:<br/>
       <p class="country">{{ tovar.country | uppercase }}</p>
     </span>
-    <a *ngIf="tovar.isAvailable" (click)="selectTovar(tovar)">В корзину</a>
-    <a *ngIf="!tovar.isAvailable">Подписаться</a>
+    <a
+      *ngIf="tovar.isAvailable"
+      (click)="selectTovar(tovar)">
+      В корзину
+    </a>
+    <a
+      [style.background-color]="'#3e4459'"
+      [style.opacity]="0.7"
+      [style.color]="'#c9dff2'"
+      *ngIf="!tovar.isAvailable">
+      Подписаться
+    </a>
   </div>
 </div>
