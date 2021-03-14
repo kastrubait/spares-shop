@@ -1,5 +1,6 @@
 .item {
-  height: 130px;
+  height: auto;
+  min-height: 110px;
 
   &--buttons,
   &--image,
@@ -10,8 +11,7 @@
   }
 
   &--buttons {
-    position: relative;
-    padding-top: 20px;
+    position: absolute;
     .delete-btn {
       display: none;
       cursor: pointer;
@@ -27,8 +27,9 @@
   }
 
   &--image {
+    margin-left: 100px;
     img {
-      width: 120px;
+      width: 100px;
     }
   }
 

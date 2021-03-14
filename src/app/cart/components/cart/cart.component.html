@@ -3,8 +3,8 @@
 </app-filters-block>
 <section class="cart-container">
   <ng-container *ngIf="total.length > 0; else isEmptyCart">
-    <div class="cart-container--total">
-      <span class="total-summ">{{ totalSumm | currency }}</span>
+    <div class="cart-container--total" appChangeBackground>
+      <span class="total-summ" [ngStyle.color]="">{{ totalSumm | currency }}</span>
     </div>
     <app-cart-item
       class="cart-container--item"

@@ -13,3 +13,5 @@ export const SORT_KEY = [
   { active: 'popularity', value: 'Популярности' },
   { active: 'price', value: 'Цене' }
 ]
+
+export const HOVER_BGCOLOR = '#00333370';
