@@ -8,7 +8,7 @@ import { ITotalCart } from "../../models/total-card.model";
 import { CartService } from '../../services/cart.service';
 import { LocalStorageService } from '../../../core/services/local-storage.service';
 import { ISort } from '../../../shared/models/sort.model';
-import { SORT_KEY } from '../../../shared/constants/constants';
+import { SORT_KEY, HOVER_BGCOLOR } from '../../../shared/constants/constants';
 
 @Component({
   selector: 'app-cart',
@@ -25,6 +25,8 @@ export class CartComponent implements OnInit, OnDestroy {
     active: SORT_KEY[0].active,
     direction: ''
   }
+
+  BACKGROUND_COLOR = HOVER_BGCOLOR;
 
   constructor(
     private cartService: CartService,

@@ -6,10 +6,13 @@ import { SharedModule } from '../shared/shared.module';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { ShowDeleteBtnDirective } from './directives/show-delete-btn.directive';
-import { ChangeBackgroundDirective } from './directives/change-background.directive';
 
 @NgModule({
-  declarations: [CartComponent, CartItemComponent, ShowDeleteBtnDirective, ChangeBackgroundDirective],
+  declarations: [
+    CartComponent,
+    CartItemComponent,
+    ShowDeleteBtnDirective
+  ],
   imports: [
     CommonModule,
     SharedModule,

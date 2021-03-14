@@ -1,10 +1,11 @@
-<app-filters-block *ngIf="total.length !== 0"
+<app-filters-block
+  *ngIf="total.length !== 0"
   (sortChanged)="setSortOptions($event)">
 </app-filters-block>
 <section class="cart-container">
   <ng-container *ngIf="total.length > 0; else isEmptyCart">
-    <div class="cart-container--total" appChangeBackground>
-      <span class="total-summ" [ngStyle.color]="">{{ totalSumm | currency }}</span>
+    <div class="cart-container--total" [appChangeBackground]="BACKGROUND_COLOR">
+      <span class="total-summ">{{ totalSumm | currency }}</span>
     </div>
     <app-cart-item
       class="cart-container--item"

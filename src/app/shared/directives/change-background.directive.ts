@@ -1,13 +1,13 @@
 import {
- Directive, ElementRef, Renderer2, HostListener, HostBinding, Input
+ Directive, ElementRef, Renderer2, HostListener, HostBinding, Input, OnInit
 } from '@angular/core';
 
-import { HOVER_BGCOLOR } from '../../shared/constants/constants';
+import { HOVER_BGCOLOR } from '../constants/constants';
 
 @Directive({
   selector: '[appChangeBackground]'
 })
-export class ChangeBackgroundDirective {
+export class ChangeBackgroundDirective implements OnInit {
   @HostBinding('cart-container--total.outline-primary') private ishovering = false;
   @Input() defaultColor: string = HOVER_BGCOLOR;
   private oldBgColor = '';
@@ -17,7 +17,7 @@ export class ChangeBackgroundDirective {
     private renderer: Renderer2
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.oldBgColor = this.el.nativeElement.style.backgroundColor as string;
   }
