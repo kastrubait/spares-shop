@@ -1,6 +1,6 @@
 export declare type SortDirection = 'asc' | 'desc' | '';
 
-export interface Sort {
+export interface ISort {
     active: string;
     direction: SortDirection;
 }

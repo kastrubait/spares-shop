@@ -12,8 +12,6 @@ import { CartService } from '../../services/cart.service';
 export class CartItemComponent {
   @Input() total!: ITotalCart;
 
-  // ngOnInit(): void {
-  // }
   constructor(
     private cartService: CartService
   ) {}

@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Sort } from '../models/sort.model';
+import { ISort } from '../models/sort.model';
 import { ITotalCart } from '../../cart/models/total-card.model';
 
 function compare(a: number | string, b: number | string, isAsc: boolean): number {
@@ -11,7 +11,7 @@ function compare(a: number | string, b: number | string, isAsc: boolean): number
   name: 'orderBy'
 })
 export class OrderByPipe implements PipeTransform {
-  public transform(allTovars: ITotalCart[], sort: Sort): ITotalCart[] {
+  public transform(allTovars: ITotalCart[], sort: ISort): ITotalCart[] {
     const data: ITotalCart[] = allTovars.slice();
     if (!sort.active || sort.direction === '') {
       return allTovars;
@@ -26,13 +26,13 @@ export class OrderByPipe implements PipeTransform {
           return compare(costA, costB, isAsc);
         }
         case 'totalSumm': {
-          const totalSummA = a.quantity;
-          const totalSummB = b.quantity;
+          const totalSummA = a.summ;
+          const totalSummB = b.summ;
           return compare(totalSummA, totalSummB, isAsc);
         }
         case 'quantity': {
-          const quantityA = a.summ;
-          const quantityB = b.summ;
+          const quantityA = a.quantity;
+          const quantityB = b.quantity;
           return compare(quantityA, quantityB, isAsc);
         }
         case 'title': {

@@ -1,3 +1,6 @@
+<app-filters-block *ngIf="total.length !== 0"
+  (sortChanged)="setSortOptions($event)">
+</app-filters-block>
 <section class="cart-container">
   <ng-container *ngIf="total.length > 0; else isEmptyCart">
     <div class="cart-container--total">
@@ -5,7 +8,7 @@
     </div>
     <app-cart-item
       class="cart-container--item"
-      *ngFor="let tovarInCart of total"
+      *ngFor="let tovarInCart of total | orderBy: sortChanged"
       [total] = "tovarInCart">
     </app-cart-item>
   </ng-container>
