@@ -13,10 +13,13 @@
     </app-cart-item>
   </ng-container>
   <ng-template #isEmptyCart>
-    <img src="../../../../assets/svg/shopping-cart.svg" alt="cart" />
-    <h2 class="empty-cart"></h2>
-    <span>
-      <a [routerLink]="['/home']">Нажмите здесь</a>, чтобы продолжить покупки
-    </span>
+    <div  class="cart-container--empty">
+      <object type="image/svg+xml" data="../../../../assets/svg/empty_cart.svg" width="200px"></object>
+      <h2>Ваша корзина пуста</h2>
+      <span>
+        <a [routerLink]="['/home']">Нажмите здесь</a>, чтобы продолжить покупки
+      </span>
+    </div>
+
   </ng-template>
 </section>
