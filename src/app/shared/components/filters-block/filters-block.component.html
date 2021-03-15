@@ -1,0 +1,37 @@
+<section #sort>
+  <span class="sort-selector">
+    <div class="dropbtn">
+      Сортировать по
+    </div>
+    <div class="dropdown-content">
+      <span
+        #title
+        [attr.data-sortBy]="'title'"
+        (click)="changeSortActive(title)">
+        Наименованию
+      </span>
+      <span
+        #quantity
+        [attr.data-sortBy]="'quantity'"
+        (click)="changeSortActive(quantity)">
+        Количеству
+      </span>
+      <span
+        #totalSumm
+        [attr.data-sortBy]="'totalSumm'"
+        (click)="changeSortActive(totalSumm)">
+        Общей сумме
+      </span>
+    </div>
+  </span>
+  <span class="sort-button" (click)="changeSortDitection()">
+    {{ sortActiveName }}
+    <img
+      class="indicator"
+      [ngClass]="indicatorStyle"
+      src="../../../../assets/svg/down.svg"
+      alt="none-up-down">
+  </span>
+</section>
+
+

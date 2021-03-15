@@ -1,0 +1,82 @@
+section {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: top;
+  justify-content: center;
+  width: 80%;
+  margin-top: 16px;
+  font-family: 'Trebuchet MS';
+  font-size: 18px;
+  font-weight: 600;
+
+  .dropdown-content {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    width: 165px;
+    font-weight: 500;
+    background-color: var(--accent-grey-color);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 4px 8px 0px var(--color-white-alt);
+  }
+
+  .dropdown-content span {
+    color: var(--color-white-alt);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content span:last-child {
+    padding: 10px 16px 12px;
+  }
+
+  .dropdown-content span:hover {
+    cursor: pointer;
+    color: var(--accent-grey-color);
+    background-color: var(--color-white-alt);
+    outline: 1px solid var(--accent-grey-color);
+    outline-offset: -3px;
+    font-weight: 600;
+  }
+
+  .dropbtn {
+    width: 160px;
+    padding: 10px 8px;
+    opacity: 0.4;
+  }
+
+  .sort-button {
+    padding: 10px 0;
+    height: 20px;
+    border-bottom: 2px solid var(--accent-pink-color);
+    color: var(--accent-pink-color);
+
+  }
+
+  .indicator {
+    width: 10px;
+    &--none {
+      display: none;
+    }
+    &--asc {
+      transform: rotate(180deg);
+    }
+    &--desc {
+      transform: rotate(0deg);
+    }
+  }
+
+  .sort-button:hover {
+    cursor: pointer;
+  }
+}
+
+.sort-selector:hover .dropdown-content {
+  display: block;
+}
+
+.sort-selector .dropbtn:hover {
+  cursor: pointer;
+}

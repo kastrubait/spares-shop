@@ -1,0 +1,34 @@
+<app-filters-block
+  *ngIf="total.length !== 0"
+  (sortChanged)="setSortOptions($event)">
+</app-filters-block>
+<section class="cart-container">
+  <ng-container *ngIf="total.length > 0; else isEmptyCart">
+    <div class="cart-container--total" appChangeBackground>
+      <span class="total-summ">
+        {{ totalSumm | currency }}
+      </span>
+    </div>
+    <app-cart-item
+      class="cart-container--item"
+      *ngFor="let tovarInCart of total | orderBy: sortChanged"
+      [total] = "tovarInCart">
+    </app-cart-item>
+  </ng-container>
+  <ng-template #isEmptyCart>
+    <div  class="cart-container--empty">
+      <object
+        type="image/svg+xml"
+        data="../../../../assets/svg/empty_cart.svg"
+        width="200px">
+      </object>
+      <h2>Ваша корзина пуста</h2>
+      <span>
+        <a [routerLink]="['/home']">
+          Нажмите здесь
+        </a>, чтобы продолжить покупки
+      </span>
+    </div>
+
+  </ng-template>
+</section>

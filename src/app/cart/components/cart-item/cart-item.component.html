@@ -1,0 +1,56 @@
+<div class="item" appShowDeleteBtn>
+  <div class="item--buttons">
+    <span
+      class="delete-btn"
+      (click)="deleteItem(total.tovar)"></span>
+    <span class="like-btn "></span>
+  </div>
+
+  <div class="item--image">
+    <img
+      [src] = [total.tovar.imgLink]
+      alt="{{ total.tovar.vendorCode }}" />
+  </div>
+
+  <div class="item--description">
+    <span class="title">
+      <strong>
+        {{ total.tovar.title }}
+      </strong>
+    </span>
+    <span>
+      Тип цены: {{ total.price }}
+    </span>
+    <span>
+      Артикул:
+      <strong>
+        {{ total.tovar.vendorCode }}
+      </strong>
+    </span>
+  </div>
+
+  <div class="item--quantity">
+    <button
+      class="minus-btn"
+      type="button"
+      name="button"
+      (click)="increaseQuantity(total.tovar)">
+      <img src="../../assets/svg/minus.svg" alt="minus" />
+    </button>
+    <input
+      type="text"
+      name="name"
+      value="{{ total.quantity }}">
+    <button
+      class="plus-btn"
+      type="button"
+      name="button"
+      (click)="decreaseQuantity(total.tovar)">
+      <img src="../../assets/svg/plus.svg" alt="plus" />
+    </button>
+  </div>
+
+  <div class="item--total-price">
+    {{ total.summ | currency }}
+  </div>
+</div>

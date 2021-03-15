@@ -1,0 +1,130 @@
+.item {
+  height: auto;
+  min-height: 110px;
+
+  &--buttons,
+  &--image,
+  &--description,
+  &--quantity {
+    margin-right: 50px;
+    display: inline-block;
+  }
+
+  &--buttons {
+    position: absolute;
+    .delete-btn {
+      display: none;
+      cursor: pointer;
+    }
+    .delete-btn {
+      width: 20px;
+      height: 100px;
+      background: url('../../../../assets/svg/close.svg') no-repeat top;
+    }
+    .visible {
+      display: inline-block;
+    }
+  }
+
+  &--image {
+    margin-left: 100px;
+    img {
+      width: 100px;
+    }
+  }
+
+  &--description {
+    width: 300px;
+    align-items: center;
+  }
+
+  &--description span {
+    display: block;
+    font-size: 18px;
+    font-family: 'Trebuchet MS';
+    color: vat(--accent-grey-color);
+    font-weight: 400;
+  }
+
+  &--description span:first-child {
+    margin-bottom: 5px;
+  }
+
+  &--description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: vat(--accent-grey-color);
+  }
+
+  &--quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 50px;
+    height: 35px;
+    font-size: 20px;
+    color: var(--accent-grey-color);
+    font-weight: 400;
+  }
+
+  button[class*=btn] {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-text-color);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  .minus-btn img,
+  .plus-btn img {
+    padding: 5px;
+  }
+
+  button:focus,
+  input:focus {
+    outline: 0;
+  }
+
+  &--total-price {
+    display: inline-block;
+    padding-top: 27px;
+    width: 83px;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+    color: var(--accent-grey-color);
+    font-weight: 400;
+  }
+}
+
+.item:hover {
+  &--buttons {
+    .delete-btn {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    &--image img {
+      width: 60%;
+    }
+    &--image,
+    &--quantity,
+    &--description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    &--buttons {
+      margin-right: 20px;
+      .delete-btn {
+        height: 30px;
+      }
+    }
+  }
+}
