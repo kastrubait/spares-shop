@@ -3,6 +3,7 @@ import {
 } from '@angular/core';
 
 import { ITovar } from '../../models/tovar.model';
+import { TEMPLATE_TOVAR } from '../../../core/services/constants.service';
 
 @Component({
   selector: 'app-tovar',
@@ -10,7 +11,7 @@ import { ITovar } from '../../models/tovar.model';
   styleUrls: ['./tovar.component.scss']
 })
 export class TovarComponent {
-  @Input() tovar!: ITovar;
+  @Input() tovar: ITovar = TEMPLATE_TOVAR;
 
   @Output() tovarSelected: EventEmitter<ITovar> = new EventEmitter<ITovar>();
 

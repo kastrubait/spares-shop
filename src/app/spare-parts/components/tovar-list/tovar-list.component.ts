@@ -4,17 +4,17 @@ import {
 
 import { ITovar } from '../../models/tovar.model';
 import { CartService } from '../../../cart/services/cart.service';
-import { TovarService } from '../../services/tovar.service';
+import { TovarService, MockTovarService } from '../../services/tovar.service';
 
 @Component({
   selector: 'app-tovar-list',
   templateUrl: './tovar-list.component.html',
   styleUrls: ['./tovar-list.component.scss'],
+  providers: [{ provide: TovarService, useClass: MockTovarService }],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TovarListComponent implements OnInit {
   tovars: ITovar[] = [];
-
   @Input() tovarSelected!: ITovar;
 
   constructor(

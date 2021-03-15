@@ -11,7 +11,7 @@ import { CartService } from '../../../cart/services/cart.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   totalInCart = 0;
-  totalInCartSubscription!: Subscription;
+  totalInCartSubscription: Subscription = new Subscription();
 
   constructor(private cartService: CartService, private router: Router) { }
 

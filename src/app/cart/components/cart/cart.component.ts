@@ -14,7 +14,7 @@ import { LocalStorageService } from '../../../core/services/local-storage.servic
 export class CartComponent implements OnInit, OnDestroy {
   total: ITotalCart[] = [];
   totalSumm = 0;
-  totalSummSubscription!: Subscription;
+  totalSummSubscription: Subscription = new Subscription();
   localStorageChanges$ = this.localStorageService.changes$;
 
   constructor(
